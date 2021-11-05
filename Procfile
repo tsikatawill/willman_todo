@@ -1,1 +1,1 @@
-web: gunicorn authentication.wsgi --log-file -
+web: gunicorn willman_todo.wsgi --log-file -
