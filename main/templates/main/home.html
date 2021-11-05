@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <header>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <h1>Willman Todo</h1>
+                    <p>Willman TODO allows users to create and manage a very simplified todo list that can be accessed anywhere at anytime.</p>
+                    <a href="{% url 'register' %}" class="btn btn-primary">Get started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+    
+{% endblock %}

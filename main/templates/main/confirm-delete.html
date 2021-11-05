@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    form{
+        font-weight: normal !important;
+    }
+    .lower a{
+        color: rgb(47, 145, 184);
+    }
+    input{
+        background: none;
+    }
+    .lower{
+        /* width: 30%; */
+        margin: auto;
+    }
+    .card{
+        width: 500px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+</style>
+<div class="container">
+    <form action="{% url 'delete-todo' todo.id %}" method="POST" class="form card py-3 mt-3">
+        {% csrf_token %}
+        <legend class="text-center">Do you really want to delete</legend>
+        <p class="text-center">"{{todo}}"?</p>
+        <div class="lower text-center">
+            <input type="submit" class="btn  mb-3 btn-sm btn-danger" name="Delete" value="Yes, delete">
+            <p>No, <a href="{% url 'todos' user %}">go back</a></p>
+        </div>
+    </form>
+</div>
+{% endblock %}

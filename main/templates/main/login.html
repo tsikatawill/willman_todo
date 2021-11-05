@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} - Login{% endblock %}
+{% block content %}
+<div class="container">
+    <form action="" method="POST" class="form py-2 px-3 mt-3 sign-up-form user-form">
+        {% csrf_token %}
+        <legend class="text-center mb-4">Login To Your Account</legend>
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+        <div class="form-group my-4">
+            <label for="username">Username</label>
+            <input type="text" required id="username" class="username" name="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group my-4">
+            <label for="password">Password</label>
+            <input type="password" required id="password" class="password" name="password" placeholder="Enter your password">
+        </div>
+        <div class="lower text-center">
+            <input type="submit" class="btn mb-3 btn-sm btn-primary" name="Login" value="Login">
+            <p>Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+            
+        </div>
+    </form>
+</div>
+{% endblock %}

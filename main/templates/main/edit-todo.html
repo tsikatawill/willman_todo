@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    form{
+        font-weight: normal !important;
+    }
+    .lower a{
+        color: rgb(47, 145, 184);
+    }
+    p{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    select{
+        pointer-events: none;
+        background: rgb(231, 231, 231);
+        outline: none;
+        border: none;
+        padding: 0.3rem 0;
+    }
+    /* input:nth-child(2){
+        
+    } */
+</style>
+<div class="container">
+    <form action="" method="POST" class="form py-2 px-3 mt-3 sign-up-form user-form">
+        {% csrf_token %}
+        <legend class="text-center">Edit Todo</legend>
+        {{form.as_p}}
+        <div class="lower text-center">
+            <input type="submit" class="btn mb-3 btn-sm btn-primary" name="Save" value="Save">
+            <a class="" href="{% url 'todos' user.id %}">Go back</a>
+        </div>
+        {% for message in messages %}
+            <p class="p-2 alert-info sm my-2">{{message}}</p>
+        {% endfor %}
+
+    </form>
+</div>
+{% endblock %}
