@@ -16,8 +16,10 @@
 <body>
     <nav class="navbar mb-5">
     <div class="container">
-        <img src="{% static '/img/logo.png' %}" alt="logo.png" width="40px">
-        <a href="/" class="logo">
+        <a href="/" class="logo-icon">
+            <img src="{% static '/img/logo.png' %}" alt="logo.png" width="40px">
+        </a>
+        <a href="/" class="logo-text">
             <strong >WILLMAN TODO </strong>
         </a>
         <ul class="nav-menu">
@@ -37,7 +39,7 @@
     {% endblock %}
 
     <footer>
-        <div class="container text-center">
+        <div class="container text-center mt-5">
             <p>Designed by <a href="https://www.github.com/tsikatawill" style="color: rgb(32, 32, 165);" target="_blank">William M. Tsikata</a></p>
         </div>
     </footer>
